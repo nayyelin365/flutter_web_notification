@@ -1,10 +1,14 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 
 class NotificationService {
   Future<void> listenNotifications() async {
-    await FirebaseMessaging.instance.requestPermission(provisional: true);
+    await FirebaseMessaging.instance.requestPermission(
+      provisional: true,
+      alert: true,
+      badge: true,
+      sound: true,
+    );
     // Register the service worker for web (only for web)
     if (kIsWeb) {
       // Manually register the service worker for Firebase Messaging

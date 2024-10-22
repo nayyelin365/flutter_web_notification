@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_notification/firebase_options.dart';
 import 'package:flutter_web_notification/home_page.dart';
 import 'package:flutter_web_notification/notifications_services.dart';
-import 'dart:html' as html;
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   // If you're going to use other Firebase services in the background, such as Firestore,
@@ -19,11 +18,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   final notificationService = NotificationService();
   notificationService.listenNotifications();
-  // Register the Service Worker for FCM on the web
-  // if (html.window.navigator.serviceWorker != null) {
-  //   await html.window.navigator.serviceWorker!
-  //       .register('firebase-messaging-sw.js');
-  // }
+
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   runApp(const MyApp());
