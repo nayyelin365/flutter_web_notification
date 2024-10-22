@@ -42,11 +42,11 @@ class NotificationService {
     // Feel free to add UI according to your preference, I am just using a custom Toast.
   }
 
-  void getToken() async {
+  Future<void> getToken() async {
     final fcmToken = await FirebaseMessaging.instance.getToken(
         vapidKey:
             "BIeFx78idiTW05gMVF4cnH2xDy84rLe-oKsdIO9ahLk2IYO_5HfEyEYYojYSxyXs5yGkUc9FMYbQLTMF7FCBZnw");
 
-    debugPrint('Token: $fcmToken');
+    print('Token: $fcmToken');
   }
 }

@@ -26,8 +26,7 @@ class DefaultFirebaseOptions {
         return ios;
       case TargetPlatform.macOS:
         return macos;
-      case TargetPlatform.windows:
-        return windows;
+
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -74,15 +73,5 @@ class DefaultFirebaseOptions {
     projectId: 'flutterwebnoti',
     storageBucket: 'flutterwebnoti.appspot.com',
     iosBundleId: 'com.example.flutterWebNotification',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyB2vSW0qH3tOgJ-qazF4ROIZg1gVgqllJk',
-    appId: '1:473484473329:web:e7379dcca0646ad8b98a50',
-    messagingSenderId: '473484473329',
-    projectId: 'flutterwebnoti',
-    authDomain: 'flutterwebnoti.firebaseapp.com',
-    storageBucket: 'flutterwebnoti.appspot.com',
-    measurementId: 'G-CC7EPD7TF1',
   );
 }
